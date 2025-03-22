@@ -1,4 +1,4 @@
-FROM nginx:latest  # Start with the official Nginx image
+FROM nginx:latest
 
 # Copy custom Nginx configuration
 COPY nginx/nginx.conf /etc/nginx/nginx.conf

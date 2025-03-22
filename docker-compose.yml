@@ -1,9 +1,9 @@
-version: '3.8'
-
 services:
   nginx:
-    build: . 
-    image: nginx-custom  # Uses the custom Nginx image from Dockerfile
+    build:
+      context: .  # Uses the custom Nginx image from Dockerfile
+      dockerfile: Dockerfile
+    image: nginx-custom
     container_name: website
     ports:
       - "8081:80"  # External Port 8081, Internal Nginx Port 80
