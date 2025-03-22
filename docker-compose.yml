@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   nginx:
+    build: . 
     image: nginx-custom  # Uses the custom Nginx image from Dockerfile
     container_name: website
     ports:
