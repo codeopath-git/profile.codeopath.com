@@ -1,0 +1,18 @@
+# Ignore SSL certificates (DO NOT push them)
+nginx/ssl/*
+
+# Ignore environment files (credentials)
+.env
+.env.local
+
+# Ignore logs & temp files
+*.log
+tmp/
+cache/
+
+# Ignore dependencies (if using Node.js)
+node_modules/
+
+# Ignore Docker cache & override files, but KEEP Dockerfile & docker-compose.yml
+docker-compose.override.yml
+
