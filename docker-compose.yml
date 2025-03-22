@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx-custom  # Uses the custom Nginx image from Dockerfile
+    container_name: website
+    ports:
+      - "8081:80"  # External Port 8081, Internal Nginx Port 80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro  # Custom Nginx config
+      - ./nginx/ssl:/etc/nginx/ssl:ro  # Mount SSL Certificates
+      - ./src/website:/usr/share/nginx/html:ro  # Static site files
+    restart: always
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    driver: bridge
