@@ -1,0 +1,28 @@
+/home/tim/profile.codeopath.com/
+│
+├── Dockerfile                   # Builds Nginx container to serve static site
+├── docker-compose.yml           # Docker Compose to run the container
+│
+├── src/
+│   └── website/                 # Static website content
+│       ├── index.html
+│       ├── portfolio-details.html
+│       ├── assets/
+│       │   ├── css/
+│       │   ├── js/
+│       │   ├── img/
+│       │   ├── scss/
+│       │   └── vendor/
+│       └── forms/
+│           ├── contact.php
+│           └── Readme.txt
+│
+├── nginx/
+│   ├── nginx.conf               # Optional: custom Nginx config for Docker (not used if default works)
+│   └── ssl/                     # SSL certs for aaPanel Nginx reverse proxy
+│       ├── fullchain.pem
+│       └── privkey.pem
+│
+└── logs/
+    ├── access.log               # aaPanel Nginx access logs
+    └── error.log                # aaPanel Nginx error logs
