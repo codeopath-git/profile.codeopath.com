@@ -1,17 +1,17 @@
+version: '3'
+
 services:
   nginx:
     build:
-      context: .  # Uses the custom Nginx image from Dockerfile
+      context: .
       dockerfile: Dockerfile
-    image: nginx-custom
-    container_name: Profile-web
+    image: profile-website
+    container_name: profile-codeopath
     ports:
-      - "8081:80"  # External Port 8081, Internal Nginx Port 80
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro  # Custom Nginx config
-      - ./nginx/ssl:/etc/nginx/ssl:ro  # Mount SSL Certificates
-      - ./src/website:/usr/share/nginx/html:ro  # Static site files
+      - "8081:80"  # Expose internal Nginx on port 8081
     restart: always
+    volumes:
+      - ./src/website:/usr/share/nginx/html:ro
     networks:
       - webnet
 
